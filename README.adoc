@@ -1,0 +1,3 @@
+= Swagger2Markup Reference documentation
+
+The documentation can be found at http://swagger2markup.github.io/swagger2markup-docs/[Reference documentation]
