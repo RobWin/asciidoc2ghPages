@@ -1,0 +1,79 @@
+== Gradle Plugin
+
+The Swagger2Markup Gradle Plugin simplifies the usage of Swagger2Markup. The Plugin adds a Gradle task which converts a Swagger JSON or YAML file into several AsciiDoc or GitHub Flavored Markdown documents.
+
+=== Getting started
+
+The project is published in JCenter and Maven Central.
+
+Add the following snippet to your Gradle build file:
+
+[source,groovy]
+[subs="attributes"]
+----
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'io.github.robwin:swagger2markup-gradle-plugin:{version}'
+    }
+}
+
+apply plugin: 'io.github.robwin.swagger2markup'
+----
+
+=== Using the plugin
+
+The plugin adds a new task named `convertSwagger2markup`. This task exposes a few properties as part of its configuration.
+
+.Properties
+[horizontal]
+inputDir:: specifies the directory where the swagger source is located. Use `inputDir file('src/docs/swagger')`
+    Type: File, but any object convertible with `project.file` can be passed.
+    Default: `src/docs/swagger`.
+outputDir:: specifies the directory where the output should be stored. Use `outputDir file("${buildDir}/asciidoc")`
+    Type: File, but any object convertible with `project.file` can be passed.
+    Default: `$buildDir/asciidoc`.
+examplesDir:: specifies the directory where example snippets from spring-restdocs are located.
+    Type: File, but any object convertible with `project.file` can be passed.
+    Default: empty (not mandatory)
+descriptionsDir:: specifies the directory where hand-written descriptions are located.
+    Type: File, but any object convertible with `project.file` can be passed.
+    Default: empty (not mandatory)
+schemasDir:: specifies the directory where JSON or XML schema files are located.
+    Type: File, but any object convertible with `project.file` can be passed.
+    Default: empty (not mandatory)
+markupLanguage:: specifies the markup output format.
+    Type: MarkupLanguage. Can be MarkupLanguage.ASCIIDOC or MarkupLanguage.MARKDOWN
+    Default: `MarkupLanguage.ASCIIDOC`
+separatedDefinitions:: specifies if a definition file per model should be generated.
+  Type: boolean
+  Default: `false`
+
+=== Example
+
+[source,groovy]
+----
+convertSwagger2markup {
+    inputDir file('src/docs/swagger')
+    examplesDir file('src/docs/asciidoc/generated')
+    descriptionsDir file('src/docs/asciidoc')
+    schemasDir file('src/docs/schemas')
+    separatedDefinitions true
+}
+----
+
+The configuration above would result in call to Swagger2Markup as follows:
+
+[source, java]
+----
+Swagger2MarkupConverter.from("src/docs/swagger")
+    .withExamples("src/docs/asciidoc/generated")
+    .withDescriptions("src/docs/asciidoc")
+    .withSchemas("src/docs/schemas")
+    .withSeparatedDefinitions().build()
+    .intoFolder("build/asciidoc");
+----
+

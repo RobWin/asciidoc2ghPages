@@ -1,0 +1,35 @@
+== Getting started
+The project is published in JCenter and Maven Central.
+
+=== Maven
+
+[source,xml]
+----
+<repositories>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>central</id>
+        <name>bintray</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>io.github.robwin</groupId>
+    <artifactId>swagger2markup</artifactId>
+    <version>0.7.0</version>
+</dependency>
+----
+
+=== Gradle
+
+[source,groovy]
+----
+repositories {
+    jcenter()
+}
+
+compile "io.github.robwin:swagger2markup:0.7.0"
+----

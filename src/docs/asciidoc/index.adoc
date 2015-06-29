@@ -1,0 +1,19 @@
+= Swagger2Markup Reference documentation
+Robert Winkler
+:doctype: book
+:toc: left
+:toclevels: 4
+:source-highlighter: coderay
+:numbered:
+:hardbreaks:
+:revnumber: {project-version}
+:revdate: {localdate}
+
+include::introduction.adoc[]
+include::getting_started.adoc[]
+include::user_guide.adoc[]
+include::gradle_plugin.adoc[]
+include::demo.adoc[]
+include::screenshots.adoc[]
+include::license.adoc[]
+include::community_contributions.adoc[]
