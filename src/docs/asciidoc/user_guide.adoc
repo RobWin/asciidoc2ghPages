@@ -122,8 +122,8 @@ public class Swagger2MarkupTest {
 ----
 dependencies {
     ...
-    compile 'io.springfox:springfox-swagger2:2.0.0'
-    testCompile 'io.springfox:springfox-staticdocs:2.0.0'
+    compile 'io.springfox:springfox-swagger2:2.0.3'
+    testCompile 'io.springfox:springfox-staticdocs:2.0.3'
     ...
 }
 ----
@@ -134,12 +134,12 @@ dependencies {
 <dependency>
 	<groupId>io.springfox</groupId>
 	<artifactId>springfox-swagger2</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.3</version>
 </dependency>
 <dependency>
 	<groupId>io.springfox</groupId>
 	<artifactId>springfox-staticdocs</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.3</version>
 	<scope>test</scope>
 </dependency>
 ```
@@ -234,7 +234,6 @@ asciidoctor {
 			<configuration>
 				<backend>html</backend>
 				<attributes>
-					<doctype>pdf</doctype>
 					<toclevels>2</generated>
 					<toc>left</generated>
 					<doctype>book</generated>
