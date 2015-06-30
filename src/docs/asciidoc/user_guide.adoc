@@ -1,6 +1,6 @@
 == Using Swagger2Markup
 
-=== Generate Markup from local Swagger file
+=== Generate Markup from a local Swagger file
 
 Using Swagger2Markup is simple.
 
@@ -11,7 +11,6 @@ public class Swagger2MarkupTest {
     @Test
     public void convertLocalSwaggerToAsciiDoc() {
         //Local Swagger source
-        //Default is AsciiDoc
         String location = Swagger2MarkupTest.class.getResource("/json/swagger.json").getPath();
         Swagger2MarkupConverter.from(location) // <1>
           .withMarkupLanguage(MarkupLanguage.ASCIIDOC) // <2>

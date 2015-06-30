@@ -1,7 +1,28 @@
 == Demo
-The quickest way to get started is to look at the https://github.com/Swagger2Markup/swagger2markup#using-swagger2markup[Swagger2Markup user guide] and the demo project https://github.com/Swagger2Markup/spring-swagger2markup-demo[spring-swagger2markup-demo]. The demo shows how to generate static docs (HTML5 and PDF) with the Swagger2Markup Gradle Plugin and serve them as static content in a Spring Boot App under http://localhost:9080/docs/index.html and http://localhost:9080/docs/index.pdf.
+The quickest way to get started is to look at the demo project https://github.com/Swagger2Markup/spring-swagger2markup-demo[spring-swagger2markup-demo]. The demo shows how to generate static docs (HTML5 and PDF) with the Swagger2Markup Gradle Plugin and serve them as static content in a Spring Boot App under http://localhost:9080/docs/index.html and http://localhost:9080/docs/index.pdf.
 
 === Full example
+
+If you want to start the Spring Boot application, please run:
+
+[source,groovy]
+----
+gradlew clean build
+----
+
+[subs="attributes"]
+----
+java -jar build/libs/spring-swagger2markup-demo-{version}.jar
+----
+
+If you only want to generate the HTML and PDF documentation, please run:
+
+[source,groovy]
+----
+gradlew clean asciidoctor
+----
+
+The results are generated into `build\asciidoc\html5` and `build\asciidoc\pdf`.
 
 ==== Gradle build script
 
@@ -13,7 +34,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.6'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
         classpath 'io.github.robwin:swagger2markup-gradle-plugin:0.1.0'
     }
 }
@@ -27,13 +48,14 @@ ext {
 }
 
 test {
+    systemProperty 'org.springframework.restdocs.outputDir', asciiDocOutputDir
     systemProperty 'io.springfox.staticdocs.outputDir', swaggerOutputDir
-    outputs.dir swaggerOutputDir
 }
 
 convertSwagger2markup {
     dependsOn test
     inputDir swaggerOutputDir
+    examplesDir asciiDocOutputDir
 }
 
 asciidoctor {
