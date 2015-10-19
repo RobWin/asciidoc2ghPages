@@ -34,7 +34,7 @@ asciidoctor {
 }
 
 githubPages {
-    repoUri = 'https://github.com/Swagger2Markup/swagger2markup-docs.git'
+    repoUri = 'https://github.com/robwin/asciidoc2ghPages.git'
 
     credentials {
         username = project.githubUser

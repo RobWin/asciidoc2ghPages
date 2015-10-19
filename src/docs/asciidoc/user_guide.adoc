@@ -4,7 +4,7 @@
 Create a `gradle.properties` file in the `.gradle` folder in your user home directory.
 
 ----
-githubUser?<GitHub user>
+githubUser=<GitHub user>
 githubPassword =<GitHub password
 ----
 
