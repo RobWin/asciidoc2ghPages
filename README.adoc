@@ -1,3 +1,33 @@
-= Swagger2Markup Reference documentation
+= Gradle AsciiDoctor project
 
-The documentation can be found at http://swagger2markup.github.io/swagger2markup-docs/[Reference documentation]
+This is a Gradle project which converts AsciiDoc documentation into HTML and publishes it to GitHub pages.
+
+== Usage guide
+
+=== Convert AsciiDoc into HTML
+
+[source]
+----
+gradlew asciidoctor
+----
+
+=== Watch AsciiDoc files
+
+[source]
+----
+gradlew watch
+----
+
+=== Start LiveReload
+[source]
+----
+gradlew liveReload
+----
+
+
+=== Publish to GitHub pages
+
+[source]
+----
+gradlew publishGhPages
+----

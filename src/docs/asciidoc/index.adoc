@@ -1,4 +1,4 @@
-= Swagger2Markup Reference documentation
+= Gradle AsciiDoctor project
 Robert Winkler
 :doctype: book
 :toc: left
@@ -9,11 +9,6 @@ Robert Winkler
 :revnumber: {project-version}
 :revdate: {localdate}
 
-include::introduction.adoc[]
-include::getting_started.adoc[]
+This is a Gradle project which converts AsciiDoc documentation into HTML and publishes it to GitHub pages.
+
 include::user_guide.adoc[]
-include::gradle_plugin.adoc[]
-include::demo.adoc[]
-include::screenshots.adoc[]
-include::community_contributions.adoc[]
-include::license.adoc[]

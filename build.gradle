@@ -12,8 +12,8 @@ buildscript {
         classpath 'org.kordamp.gradle:livereload-gradle-plugin:0.2.1'
     }
 }
-description = 'Swagger2Markup documentation'
-version = '0.7.0'
+description = 'AsciiDoc documentation'
+version = '0.1.0'
 group = 'io.github.robwin'
 
 apply plugin: 'org.asciidoctor.convert'
@@ -24,7 +24,6 @@ apply plugin: 'org.kordamp.gradle.livereload'
 repositories {
     jcenter()
     mavenCentral()
-    mavenLocal()
 }
 
 asciidoctor {
@@ -61,5 +60,5 @@ liveReload {
 publishGhPages.dependsOn asciidoctor
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
+    gradleVersion = '2.7'
 }
