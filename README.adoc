@@ -4,6 +4,14 @@ This is a Gradle project which converts AsciiDoc documentation into HTML and pub
 
 == Usage guide
 
+=== Create gradle.properties file
+Create a `gradle.properties` file in the `.gradle` folder in your user home directory.
+
+----
+githubUser=<GitHub user>
+githubPassword=<GitHub password
+----
+
 === Convert AsciiDoc into HTML
 
 [source]

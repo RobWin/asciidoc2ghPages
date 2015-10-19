@@ -5,7 +5,7 @@ Create a `gradle.properties` file in the `.gradle` folder in your user home dire
 
 ----
 githubUser=<GitHub user>
-githubPassword =<GitHub password
+githubPassword=<GitHub password
 ----
 
 === Convert AsciiDoc into HTML
