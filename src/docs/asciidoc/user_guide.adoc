@@ -1,5 +1,14 @@
 == Usage guide
 
+=== Create a gh-pages branch
+Create a gh-pages branch and push it to GitHub
+
+[source]
+----
+git branch gh-pages
+git push --all -u
+----
+
 === Create gradle.properties file
 Create a `gradle.properties` file in the `.gradle` folder in your user home directory.
 
